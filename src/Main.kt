@@ -16,3 +16,4 @@ fun fetchUser(id: String) {
     Log.d("MainActivity", "Fetching user: $id")
 //    viewModel.getUser(id)
 }
+
