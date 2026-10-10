@@ -39,7 +39,7 @@
 
 1. Open [exercises/CoroutinesExercises.kt](exercises/CoroutinesExercises.kt).
 2. Replace each `TODO(...)` with your answer.
-3. Check: `./gradlew exercises --tests "l09_*"`. All 10 tests (9 exercises) should pass.
+3. Check: `./gradlew exercises --tests "l09_*"`. All 11 tests (10 exercises) should pass.
    The tests use virtual time, so they finish in milliseconds even when your
    code waits for seconds.
 

@@ -99,4 +99,19 @@ interface CoroutinesTasks {
      * cancel the channel and its scope).
      */
     fun CoroutineScope.squares(upTo: Int): ReceiveChannel<Int>
+
+    /**
+     * Ex 10. Return the sum of [selector] over all [items], computed in
+     * PARALLEL: split [items] into at most [chunks] slices and sum every
+     * slice at the same time on Dispatchers.Default (one core each).
+     * [selector] is plain CPU work, not a suspend function.
+     * parallelSumOf(listOf(1, 2, 3), 2) { it * 10L } == 60.
+     * Empty list -> 0. More chunks than items is fine.
+     * [chunks] must be at least 1 (IllegalArgumentException otherwise).
+     */
+    suspend fun parallelSumOf(
+        items: List<Int>,
+        chunks: Int,
+        selector: (Int) -> Long,
+    ): Long
 }

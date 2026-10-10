@@ -74,4 +74,13 @@ object CoroutinesExercises : CoroutinesTasks {
     //       Call require BEFORE produce { }: an exception thrown inside the
     //       produce block travels through the channel, not to the caller.
     override fun CoroutineScope.squares(upTo: Int): ReceiveChannel<Int> = TODO("Ex 9: a channel of squares")
+
+    // Hint: lesson17_parallelism (withContext(Dispatchers.Default), async per slice, awaitAll)
+    //       + l06_collections/lesson07_aggregation (chunked, sumOf). Round the slice size UP,
+    //       so you get at most `chunks` slices.
+    override suspend fun parallelSumOf(
+        items: List<Int>,
+        chunks: Int,
+        selector: (Int) -> Long,
+    ): Long = TODO("Ex 10: sum the slices on several cores at once")
 }

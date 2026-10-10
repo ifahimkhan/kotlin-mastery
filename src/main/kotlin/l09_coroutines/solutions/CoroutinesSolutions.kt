@@ -159,4 +159,26 @@ object CoroutinesSolutions : CoroutinesTasks {
             for (n in 1..upTo) send(n * n)
         }
     }
+
+    // async alone is not parallel: on one thread, CPU-only slices would take
+    // turns. withContext(Dispatchers.Default) moves us to the multi-core pool,
+    // and every async started inside inherits it, so the slices run on
+    // different cores at the same instant. Each slice RETURNS its own sum,
+    // so nothing is shared and no Mutex is needed (compare Ex 8).
+    override suspend fun parallelSumOf(
+        items: List<Int>,
+        chunks: Int,
+        selector: (Int) -> Long,
+    ): Long {
+        require(chunks >= 1) { "chunks must be at least 1, was $chunks" }
+        if (items.isEmpty()) return 0
+        val sliceSize = (items.size + chunks - 1) / chunks // round up -> at most `chunks` slices
+        return withContext(Dispatchers.Default) {
+            items
+                .chunked(sliceSize)
+                .map { slice -> async { slice.sumOf(selector) } }
+                .awaitAll()
+                .sum()
+        }
+    }
 }

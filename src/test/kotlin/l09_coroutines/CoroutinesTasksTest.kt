@@ -13,6 +13,11 @@ import kotlinx.coroutines.test.runTest
 import kotlinx.coroutines.yield
 import org.junit.jupiter.api.MethodOrderer
 import org.junit.jupiter.api.TestMethodOrder
+import java.util.Collections
+import java.util.concurrent.BrokenBarrierException
+import java.util.concurrent.CyclicBarrier
+import java.util.concurrent.TimeUnit
+import java.util.concurrent.TimeoutException
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
@@ -149,5 +154,37 @@ abstract class CoroutinesTasksTest(
             assertFailsWith<IllegalArgumentException>(
                 "Hint: call require BEFORE produce { }, so the caller gets the exception",
             ) { with(tasks) { squares(-1) } }
+        }
+
+    @Test
+    fun `ex10 parallelSumOf sums slices on several cores at once`() =
+        runTest {
+            assertEquals(60L, tasks.parallelSumOf(listOf(1, 2, 3), 2) { it * 10L })
+            assertEquals(5_050L, tasks.parallelSumOf((1..100).toList(), 7) { it.toLong() })
+            assertEquals(6L, tasks.parallelSumOf(listOf(1, 2, 3), 10) { it.toLong() }, "Hint: more chunks than items")
+            assertEquals(0L, tasks.parallelSumOf(emptyList(), 4) { it.toLong() })
+            assertFailsWith<IllegalArgumentException> { tasks.parallelSumOf(listOf(1), 0) { it.toLong() } }
+
+            // Two slices, one item each. The barrier only opens if BOTH slices
+            // wait at it at the same instant, i.e. on two threads in parallel.
+            val barrier = CyclicBarrier(2)
+            val threadNames = Collections.synchronizedList(mutableListOf<String>())
+            val met =
+                tasks.parallelSumOf(listOf(1, 1), 2) {
+                    threadNames += Thread.currentThread().name
+                    try {
+                        barrier.await(1, TimeUnit.SECONDS)
+                        1L
+                    } catch (e: TimeoutException) {
+                        0L
+                    } catch (e: BrokenBarrierException) {
+                        0L
+                    }
+                }
+            assertTrue(
+                threadNames.all { it.startsWith("DefaultDispatcher-worker") },
+                "Hint: run the slices on Dispatchers.Default, they ran on $threadNames",
+            )
+            assertEquals(2L, met, "Hint: the slices took turns; start each one with async on Dispatchers.Default")
         }
 }

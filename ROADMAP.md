@@ -139,7 +139,7 @@ Tip: fork this repository so you can commit your exercise answers and keep track
 - [ ] 09.15 [select: wait for whichever is first](src/main/kotlin/l09_coroutines/lesson15_select/Select.kt)
 - [ ] 09.16 [Testing coroutines](src/main/kotlin/l09_coroutines/lesson16_testing/TestingCoroutines.kt)
 - [ ] 09.17 [Parallelism: using every CPU core](src/main/kotlin/l09_coroutines/lesson17_parallelism/Parallelism.kt)
-- [ ] Exercises: [CoroutinesExercises](src/main/kotlin/l09_coroutines/exercises/CoroutinesExercises.kt) (10 tests green)
+- [ ] Exercises: [CoroutinesExercises](src/main/kotlin/l09_coroutines/exercises/CoroutinesExercises.kt) (11 tests green)
 - [ ] Practice A: [Parallel file downloader](src/main/kotlin/l09_coroutines/practice/downloader/Downloader.kt)
 - [ ] Practice B: [Restaurant kitchen with channels](src/main/kotlin/l09_coroutines/practice/kitchen/Kitchen.kt)
 - [ ] Practice C: [Rate-limited API client with retries](src/main/kotlin/l09_coroutines/practice/ratelimit/RateLimitedClient.kt)
