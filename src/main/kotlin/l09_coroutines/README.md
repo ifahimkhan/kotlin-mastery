@@ -25,6 +25,7 @@
 | 09.14 | [Channels](lesson14_channels/Channels.kt) | send/receive/close, capacities, `produce`, pipelines, fan-out, fan-in |
 | 09.15 | [Select](lesson15_select/Select.kt) | `select` over channels and deferred results, bias |
 | 09.16 | [TestingCoroutines](lesson16_testing/TestingCoroutines.kt) | `runTest`, virtual time, test dispatchers, injecting dispatchers |
+| 09.17 | [Parallelism](lesson17_parallelism/Parallelism.kt) | concurrency vs parallelism, CPU work on all cores, why `async` alone is not parallel |
 
 ## Practice projects
 
@@ -57,6 +58,9 @@ withContext(Dispatchers.IO) { readFile() }  // switch thread, return a result
 Dispatchers.Default                          // CPU work
 Dispatchers.IO                               // blocking I/O
 Dispatchers.Default.limitedParallelism(1)    // one task at a time
+withContext(Dispatchers.Default) {           // CPU work on every core:
+    chunks.map { async { work(it) } }.awaitAll()  // split, run in parallel, combine
+}
 
 job.cancelAndJoin()                // ask to stop, wait until stopped
 ensureActive(); yield()            // let long loops notice cancellation
@@ -81,6 +85,7 @@ select { a.onReceive { it }; b.onAwait { it } }
 - **Cancellation is cooperative.** It only happens at suspension points and at explicit checks (`ensureActive`, `yield`, `isActive`). Always rethrow `CancellationException`.
 - **Every remote call needs a time limit.** Use `withTimeoutOrNull` and fall back to a sensible value.
 - **Shared mutable state needs protection.** A `Mutex`, an atomic or confinement all work. Better still, avoid shared state: return results with `async`, or pass values through channels.
+- **Concurrency is not parallelism.** `async` only starts work and returns its result later. On one thread, CPU tasks take turns; they run at the same instant only on a multi-threaded dispatcher such as `Dispatchers.Default`.
 - **Inject dispatchers and waits.** Code that takes its dispatcher as a parameter can be tested with `runTest` on virtual time: fast and deterministic.
 
 **Next:** Level 10 — Flow

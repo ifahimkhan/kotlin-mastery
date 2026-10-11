@@ -19,7 +19,7 @@ import kotlinx.coroutines.withContext
  *           price below 90: 85
  *           calls made: 4
  *           report has 2 lines
- *  NEXT   : practice/downloader/Downloader.kt
+ *  NEXT   : lesson17_parallelism/Parallelism.kt
  * =====================================================================
  */
 
