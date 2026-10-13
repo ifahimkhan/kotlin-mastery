@@ -1,0 +1,3 @@
+The quick brown fox jumps over the lazy dog. The dog sleeps; the fox runs!
+A fox is quick, and a dog is lazy. Is the fox quick? Yes, the fox is quick.
+Kotlin makes counting words easy: split, group, count, sort. Done!

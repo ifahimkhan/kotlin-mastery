@@ -49,8 +49,8 @@ Then open the folder in IntelliJ (**File ▸ Open**, and pick the folder) and wa
 | 02 | [Control flow](src/main/kotlin/l02_control_flow) — if, when, ranges, loops, labels | ✅ |
 | 03 | [Functions](src/main/kotlin/l03_functions) — defaults, named args, vararg, extensions, tailrec | ✅ |
 | 04 | [Null safety](src/main/kotlin/l04_null_safety) — `?.`, `?:`, `!!`, smart casts, lateinit, lazy | ✅ |
-| 05 | OOP — classes, interfaces, data/sealed/enum classes, objects | 🔜 |
-| 06 | Collections — List/Set/Map, transformations, sequences | 🔜 |
+| 05 | [OOP](src/main/kotlin/l05_oop) — classes, interfaces, data/sealed/enum classes, objects | ✅ |
+| 06 | [Collections](src/main/kotlin/l06_collections) — List/Set/Map, transformations, sequences | ✅ |
 | 07 | Functional — lambdas, higher-order functions, scope functions, inline | 🔜 |
 | 08 | Generics — variance, constraints, reified | 🔜 |
 | 09 | Coroutines — builders, dispatchers, structured concurrency, cancellation, channels | 🔜 |

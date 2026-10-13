@@ -56,14 +56,46 @@ Tip: fork this repository so you can commit your exercise answers and keep track
 - [ ] Practice A: [Safe input parser](src/main/kotlin/l04_null_safety/practice/safeinput/SafeInputParser.kt)
 - [ ] Practice B: [The Crash Museum](src/main/kotlin/l04_null_safety/practice/crashmuseum/CrashMuseum.kt)
 
+## Level 05 — OOP · [README](src/main/kotlin/l05_oop/README.md)
+
+- [ ] 05.1 [Classes and objects](src/main/kotlin/l05_oop/lesson01_classes/ClassesAndObjects.kt)
+- [ ] 05.2 [Constructors and init blocks](src/main/kotlin/l05_oop/lesson02_constructors/Constructors.kt)
+- [ ] 05.3 [Properties: getters, setters and backing fields](src/main/kotlin/l05_oop/lesson03_properties/Properties.kt)
+- [ ] 05.4 [Visibility and encapsulation](src/main/kotlin/l05_oop/lesson04_visibility/Visibility.kt)
+- [ ] 05.5 [Inheritance and abstract classes](src/main/kotlin/l05_oop/lesson05_inheritance/Inheritance.kt)
+- [ ] 05.6 [Interfaces](src/main/kotlin/l05_oop/lesson06_interfaces/Interfaces.kt)
+- [ ] 05.7 [Data classes](src/main/kotlin/l05_oop/lesson07_data_classes/DataClasses.kt)
+- [ ] 05.8 [Objects and companion objects](src/main/kotlin/l05_oop/lesson08_objects/ObjectsAndCompanions.kt)
+- [ ] 05.9 [Enum classes and sealed types](src/main/kotlin/l05_oop/lesson09_enums_sealed/EnumsAndSealed.kt)
+- [ ] 05.10 [Nested and inner classes, value classes, Kotlin vs Java](src/main/kotlin/l05_oop/lesson10_nested_value_java/NestedValueAndJava.kt)
+- [ ] Exercises: [OopExercises](src/main/kotlin/l05_oop/exercises/OopExercises.kt) (10 tests green)
+- [ ] Practice A: [Bank account system](src/main/kotlin/l05_oop/practice/bank/BankAccount.kt)
+- [ ] Practice B: [Shapes with a sealed hierarchy](src/main/kotlin/l05_oop/practice/shapes/Shapes.kt)
+- [ ] Practice C: [Parking lot](src/main/kotlin/l05_oop/practice/parking/ParkingLot.kt)
+
+## Level 06 — Collections · [README](src/main/kotlin/l06_collections/README.md)
+
+- [ ] 06.1 [Just enough lambdas for collections](src/main/kotlin/l06_collections/lesson01_lambda_primer/LambdaPrimer.kt)
+- [ ] 06.2 [Lists](src/main/kotlin/l06_collections/lesson02_lists/Lists.kt)
+- [ ] 06.3 [Sets](src/main/kotlin/l06_collections/lesson03_sets/Sets.kt)
+- [ ] 06.4 [Maps](src/main/kotlin/l06_collections/lesson04_maps/Maps.kt)
+- [ ] 06.5 [Transformations: map, flatMap, zip, associate](src/main/kotlin/l06_collections/lesson05_transformations/Transformations.kt)
+- [ ] 06.6 [Filtering and predicates](src/main/kotlin/l06_collections/lesson06_filtering/Filtering.kt)
+- [ ] 06.7 [Aggregation and grouping](src/main/kotlin/l06_collections/lesson07_aggregation/Aggregation.kt)
+- [ ] 06.8 [Sorting](src/main/kotlin/l06_collections/lesson08_sorting/Sorting.kt)
+- [ ] 06.9 [Sequences: lazy collections](src/main/kotlin/l06_collections/lesson09_sequences/Sequences.kt)
+- [ ] 06.10 [Pitfalls and immutability](src/main/kotlin/l06_collections/lesson10_pitfalls/CollectionPitfalls.kt)
+- [ ] Exercises: [CollectionsExercises](src/main/kotlin/l06_collections/exercises/CollectionsExercises.kt) (10 tests green)
+- [ ] Practice A: [Student grade analytics](src/main/kotlin/l06_collections/practice/grades/StudentGradeAnalytics.kt)
+- [ ] Practice B: [Word frequency counter](src/main/kotlin/l06_collections/practice/words/WordFrequency.kt)
+- [ ] Practice C: [Inventory report](src/main/kotlin/l06_collections/practice/inventory/InventoryReport.kt)
+
 ---
 
 ## Coming next
 
 | Level | Topic | Highlights |
 |------:|-------|------------|
-| 05 | OOP | classes, constructors, interfaces, data/enum/sealed classes, objects, value classes · *bank account, shapes, parking lot* |
-| 06 | Collections | List/Set/Map, map/filter/fold/groupBy/associate/windowed, sequences · *grade analytics, word counter, inventory* |
 | 07 | Functional | lambdas, higher-order functions, scope functions, inline/reified · *validation pipeline, event bus* |
 | 08 | Generics | variance (in/out), constraints, star projection, reified · *Result/Either, generic repository, cache* |
 | 09 | Coroutines | suspend, launch/async, Job, dispatchers, structured concurrency, cancellation, timeouts, exceptions, Mutex, channels, select, runTest · *downloader, rate-limited client, restaurant kitchen* |
