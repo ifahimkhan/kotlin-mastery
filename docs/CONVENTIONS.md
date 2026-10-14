@@ -73,7 +73,9 @@ Use these numbered banners, in this order, and skip the ones that don't apply:
 
 - 6–10 exercises per level, numbered `Ex 1`..`Ex N` in the Tasks KDoc.
 - Exercise bodies are expression-bodied: `= TODO("Ex 3: short instruction")`.
-- Put a `// Hint: lessonNN_x (...)` comment above each exercise.
+- Put a `// Hint: lessonNN_x (...)` comment above each exercise. For a lesson in
+  another level, prefix the level folder: `// Hint: l06_collections/lesson04_maps (...)`.
+- A hint must point to a lesson that actually teaches what the exercise needs.
 - Tests are named `` `exN what it checks` `` and include edge cases (empty,
   zero, negative) with hint messages in the assertions.
 

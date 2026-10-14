@@ -90,14 +90,42 @@ Tip: fork this repository so you can commit your exercise answers and keep track
 - [ ] Practice B: [Word frequency counter](src/main/kotlin/l06_collections/practice/words/WordFrequency.kt)
 - [ ] Practice C: [Inventory report](src/main/kotlin/l06_collections/practice/inventory/InventoryReport.kt)
 
+## Level 07 — Functional · [README](src/main/kotlin/l07_functional/README.md)
+
+- [ ] 07.1 [Lambdas in depth](src/main/kotlin/l07_functional/lesson01_lambdas/LambdasInDepth.kt)
+- [ ] 07.2 [Function types](src/main/kotlin/l07_functional/lesson02_function_types/FunctionTypes.kt)
+- [ ] 07.3 [Higher-order functions](src/main/kotlin/l07_functional/lesson03_higher_order/HigherOrderFunctions.kt)
+- [ ] 07.4 [Function references (::)](src/main/kotlin/l07_functional/lesson04_references/FunctionReferences.kt)
+- [ ] 07.5 [Closures](src/main/kotlin/l07_functional/lesson05_closures/Closures.kt)
+- [ ] 07.6 [Scope functions: let, run, with, apply, also](src/main/kotlin/l07_functional/lesson06_scope_functions/ScopeFunctions.kt)
+- [ ] 07.7 [Inline functions, returns from lambdas, noinline, crossinline](src/main/kotlin/l07_functional/lesson07_inline/InlineFunctions.kt)
+- [ ] 07.8 [Lambdas with receiver](src/main/kotlin/l07_functional/lesson08_receivers/LambdasWithReceiver.kt)
+- [ ] 07.9 [Functional patterns](src/main/kotlin/l07_functional/lesson09_patterns/FunctionalPatterns.kt)
+- [ ] Exercises: [FunctionalExercises](src/main/kotlin/l07_functional/exercises/FunctionalExercises.kt) (10 tests green)
+- [ ] Practice A: [Validation pipeline](src/main/kotlin/l07_functional/practice/validation/ValidationPipeline.kt)
+- [ ] Practice B: [A tiny event bus](src/main/kotlin/l07_functional/practice/eventbus/EventBus.kt)
+
+## Level 08 — Generics · [README](src/main/kotlin/l08_generics/README.md)
+
+- [ ] 08.1 [Why generics?](src/main/kotlin/l08_generics/lesson01_why/WhyGenerics.kt)
+- [ ] 08.2 [Generic functions](src/main/kotlin/l08_generics/lesson02_functions/GenericFunctions.kt)
+- [ ] 08.3 [Constraints: upper bounds, where, T : Any](src/main/kotlin/l08_generics/lesson03_constraints/Constraints.kt)
+- [ ] 08.4 [Variance, part 1: out (producers)](src/main/kotlin/l08_generics/lesson04_variance_out/VarianceOut.kt)
+- [ ] 08.5 [Variance, part 2: in (consumers) and projections](src/main/kotlin/l08_generics/lesson05_variance_in/VarianceIn.kt)
+- [ ] 08.6 [Star projection and type erasure](src/main/kotlin/l08_generics/lesson06_star_erasure/StarAndErasure.kt)
+- [ ] 08.7 [Reified type parameters](src/main/kotlin/l08_generics/lesson07_reified/Reified.kt)
+- [ ] 08.8 [A tour of the type system](src/main/kotlin/l08_generics/lesson08_type_system/TypeSystem.kt)
+- [ ] Exercises: [GenericsExercises](src/main/kotlin/l08_generics/exercises/GenericsExercises.kt) (11 tests green)
+- [ ] Practice A: [Your own Result type](src/main/kotlin/l08_generics/practice/result/ResultType.kt)
+- [ ] Practice B: [A generic, immutable repository](src/main/kotlin/l08_generics/practice/repository/GenericRepository.kt)
+- [ ] Practice C: [A type-safe cache with LRU eviction](src/main/kotlin/l08_generics/practice/cache/TypeSafeCache.kt)
+
 ---
 
 ## Coming next
 
 | Level | Topic | Highlights |
 |------:|-------|------------|
-| 07 | Functional | lambdas, higher-order functions, scope functions, inline/reified · *validation pipeline, event bus* |
-| 08 | Generics | variance (in/out), constraints, star projection, reified · *Result/Either, generic repository, cache* |
 | 09 | Coroutines | suspend, launch/async, Job, dispatchers, structured concurrency, cancellation, timeouts, exceptions, Mutex, channels, select, runTest · *downloader, rate-limited client, restaurant kitchen* |
 | 10 | Flow | cold/hot, operators, buffer/conflate, StateFlow, SharedFlow, callbackFlow, Turbine · *stock ticker, search-as-you-type, chat room* |
 | 11 | Advanced | delegation, operator overloading, DSL builders, Result, interop · *HTML DSL, config DSL, state machine* |
