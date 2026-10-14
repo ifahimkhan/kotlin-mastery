@@ -48,6 +48,13 @@ package clash. A package per lesson also gives a clean run command:
   That opts the file out of the check. A file with no OUTPUT line fails the test.
 - Header labels: GOAL, RUN, OUTPUT, NEXT, NEW, DESIGN, EXTEND, NOTE. The
   output block ends at the next one of these labels.
+- Concurrent lessons (levels 09+) must print the same text on a slow CI runner:
+  - Order output with signals (`join`, `await`, `CompletableDeferred`, channel
+    handshakes), not with racing `delay`s. Timer gaps that decide output order
+    must be at least 150 ms.
+  - Never print thread names, raw durations or racy counts. Print comparisons
+    with wide margins (at least 3x) instead, e.g. "took less than 600 ms: true".
+  - Tests use `runTest` and virtual time, never real delays.
 - Every test has a 5-second timeout (`src/test/resources/junit-platform.properties`),
   so a learner's endless loop fails instead of hanging.
 

@@ -1,8 +1,10 @@
+import org.junit.jupiter.api.Assertions.assertTimeoutPreemptively
 import org.junit.jupiter.api.DynamicTest
 import org.junit.jupiter.api.TestFactory
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.PrintStream
+import java.time.Duration
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
@@ -31,7 +33,10 @@ class LessonOutputTest {
             val className = className(file)
             DynamicTest.dynamicTest(className) {
                 val expected = parseExpectedOutput(file) ?: return@dynamicTest
-                val actual = runMain(className)
+                // A lesson that hangs must fail fast with its name, not stall the whole build.
+                val actual = assertTimeoutPreemptively<List<String>>(LESSON_TIMEOUT, { runMain(className) }) {
+                    "$className did not finish within $LESSON_TIMEOUT"
+                }
                 assertEquals(expected, actual, "Output of $className differs from its OUTPUT block")
             }
         }
@@ -58,7 +63,10 @@ class LessonOutputTest {
         val body =
             lines
                 .drop(start + 1)
-                .takeWhile { !ANY_LABEL.matches(it) && !it.trimStart().startsWith("* ===") }
+                .takeWhile { line ->
+                    val trimmed = line.trimStart()
+                    !ANY_LABEL.matches(line) && !trimmed.startsWith("* ===") && !trimmed.startsWith("*/")
+                }
                 .map { it.substringAfter(" *").trimEnd() }
         val indent = body.filter { it.isNotBlank() }.minOfOrNull { it.length - it.trimStart().length } ?: 0
         return body.map { it.drop(indent) }.dropLastWhile { it.isBlank() }
@@ -84,6 +92,7 @@ class LessonOutputTest {
     }
 
     private companion object {
+        val LESSON_TIMEOUT: Duration = Duration.ofSeconds(30)
         // Overridable so a single level can be checked in isolation.
         val SOURCE_ROOT = File(System.getProperty("lessons.root") ?: "src/main/kotlin")
         val OUTPUT_LABEL = Regex("""^\s*\*\s+OUTPUT\s*:.*$""")
