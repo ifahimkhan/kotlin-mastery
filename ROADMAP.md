@@ -120,13 +120,77 @@ Tip: fork this repository so you can commit your exercise answers and keep track
 - [ ] Practice B: [A generic, immutable repository](src/main/kotlin/l08_generics/practice/repository/GenericRepository.kt)
 - [ ] Practice C: [A type-safe cache with LRU eviction](src/main/kotlin/l08_generics/practice/cache/TypeSafeCache.kt)
 
+## Level 09 — Coroutines · [README](src/main/kotlin/l09_coroutines/README.md)
+
+- [ ] 09.1 [Why coroutines? Threads vs coroutines](src/main/kotlin/l09_coroutines/lesson01_threads_vs_coroutines/ThreadsVsCoroutines.kt)
+- [ ] 09.2 [Suspend functions](src/main/kotlin/l09_coroutines/lesson02_suspend/SuspendFunctions.kt)
+- [ ] 09.3 [Coroutine builders: runBlocking, launch, async](src/main/kotlin/l09_coroutines/lesson03_builders/CoroutineBuilders.kt)
+- [ ] 09.4 [The Job and its lifecycle](src/main/kotlin/l09_coroutines/lesson04_job_lifecycle/JobLifecycle.kt)
+- [ ] 09.5 [async and await](src/main/kotlin/l09_coroutines/lesson05_async_await/AsyncAwait.kt)
+- [ ] 09.6 [Dispatchers](src/main/kotlin/l09_coroutines/lesson06_dispatchers/Dispatchers.kt)
+- [ ] 09.7 [withContext](src/main/kotlin/l09_coroutines/lesson07_with_context/WithContext.kt)
+- [ ] 09.8 [Structured concurrency](src/main/kotlin/l09_coroutines/lesson08_structured_concurrency/StructuredConcurrency.kt)
+- [ ] 09.9 [Cancellation is cooperative](src/main/kotlin/l09_coroutines/lesson09_cancellation/Cancellation.kt)
+- [ ] 09.10 [Timeouts](src/main/kotlin/l09_coroutines/lesson10_timeouts/Timeouts.kt)
+- [ ] 09.11 [Exceptions: try/catch/finally and coroutines](src/main/kotlin/l09_coroutines/lesson11_exceptions/Exceptions.kt)
+- [ ] 09.12 [The CoroutineContext](src/main/kotlin/l09_coroutines/lesson12_context/CoroutineContextBasics.kt)
+- [ ] 09.13 [Shared mutable state](src/main/kotlin/l09_coroutines/lesson13_shared_state/SharedState.kt)
+- [ ] 09.14 [Channels](src/main/kotlin/l09_coroutines/lesson14_channels/Channels.kt)
+- [ ] 09.15 [select: wait for whichever is first](src/main/kotlin/l09_coroutines/lesson15_select/Select.kt)
+- [ ] 09.16 [Testing coroutines](src/main/kotlin/l09_coroutines/lesson16_testing/TestingCoroutines.kt)
+- [ ] Exercises: [CoroutinesExercises](src/main/kotlin/l09_coroutines/exercises/CoroutinesExercises.kt) (10 tests green)
+- [ ] Practice A: [Parallel file downloader](src/main/kotlin/l09_coroutines/practice/downloader/Downloader.kt)
+- [ ] Practice B: [Restaurant kitchen with channels](src/main/kotlin/l09_coroutines/practice/kitchen/Kitchen.kt)
+- [ ] Practice C: [Rate-limited API client with retries](src/main/kotlin/l09_coroutines/practice/ratelimit/RateLimitedClient.kt)
+
+## Level 10 — Flow · [README](src/main/kotlin/l10_flow/README.md)
+
+- [ ] 10.1 [Flow basics: a stream of values over time](src/main/kotlin/l10_flow/lesson01_flow_basics/FlowBasics.kt)
+- [ ] 10.2 [Intermediate operators: transform a flow](src/main/kotlin/l10_flow/lesson02_intermediate_operators/IntermediateOperators.kt)
+- [ ] 10.3 [Terminal operators: run the flow, get a result](src/main/kotlin/l10_flow/lesson03_terminal_operators/TerminalOperators.kt)
+- [ ] 10.4 [Flow context: where does a flow run?](src/main/kotlin/l10_flow/lesson04_flow_context/FlowContext.kt)
+- [ ] 10.5 [Buffering and timing: slow collectors, fast producers](src/main/kotlin/l10_flow/lesson05_buffering_timing/BufferingAndTiming.kt)
+- [ ] 10.6 [Combining flows: zip, combine, merge, flatMap*](src/main/kotlin/l10_flow/lesson06_combining/Combining.kt)
+- [ ] 10.7 [Errors and completion](src/main/kotlin/l10_flow/lesson07_errors_completion/ErrorsAndCompletion.kt)
+- [ ] 10.8 [StateFlow: a value that can be watched](src/main/kotlin/l10_flow/lesson08_stateflow/StateFlowBasics.kt)
+- [ ] 10.9 [SharedFlow: broadcasting events](src/main/kotlin/l10_flow/lesson09_sharedflow/SharedFlowBasics.kt)
+- [ ] 10.10 [stateIn and shareIn: making a cold flow hot](src/main/kotlin/l10_flow/lesson10_statein_sharein/StateInShareIn.kt)
+- [ ] 10.11 [callbackFlow and channelFlow](src/main/kotlin/l10_flow/lesson11_callbackflow/CallbackFlowBasics.kt)
+- [ ] 10.12 [Testing flows](src/main/kotlin/l10_flow/lesson12_testing_flows/TestingFlows.kt)
+- [ ] Exercises: [FlowExercises](src/main/kotlin/l10_flow/exercises/FlowExercises.kt) (10 tests green)
+- [ ] Practice A: [A live stock ticker in the console](src/main/kotlin/l10_flow/practice/ticker/StockTicker.kt)
+- [ ] Practice B: [Search as you type](src/main/kotlin/l10_flow/practice/search/SearchAsYouType.kt)
+- [ ] Practice C: [A chat room](src/main/kotlin/l10_flow/practice/chat/ChatRoom.kt)
+
 ---
 
-## Coming next
+## Level 11 — Advanced · [README](src/main/kotlin/l11_advanced/README.md)
 
-| Level | Topic | Highlights |
-|------:|-------|------------|
-| 09 | Coroutines | suspend, launch/async, Job, dispatchers, structured concurrency, cancellation, timeouts, exceptions, Mutex, channels, select, runTest · *downloader, rate-limited client, restaurant kitchen* |
-| 10 | Flow | cold/hot, operators, buffer/conflate, StateFlow, SharedFlow, callbackFlow, Turbine · *stock ticker, search-as-you-type, chat room* |
-| 11 | Advanced | delegation, operator overloading, DSL builders, Result, interop · *HTML DSL, config DSL, state machine* |
-| 12 | Capstones | library manager CLI, weather aggregator (Ktor + Flow), task scheduler |
+- [ ] 11.1 [Exceptions in depth: try, catch, finally, use](src/main/kotlin/l11_advanced/lesson01_exceptions/Exceptions.kt)
+- [ ] 11.2 [Result<T> and runCatching](src/main/kotlin/l11_advanced/lesson02_result/ResultBasics.kt)
+- [ ] 11.3 [Class delegation with `by`](src/main/kotlin/l11_advanced/lesson03_class_delegation/ClassDelegation.kt)
+- [ ] 11.4 [Property delegation: lazy, observable, your own](src/main/kotlin/l11_advanced/lesson04_property_delegation/PropertyDelegation.kt)
+- [ ] 11.5 [Operator overloading](src/main/kotlin/l11_advanced/lesson05_operator_overloading/OperatorOverloading.kt)
+- [ ] 11.6 [Type-safe builders (DSLs)](src/main/kotlin/l11_advanced/lesson06_dsl_builders/DslBuilders.kt)
+- [ ] 11.7 [Annotations and (light) reflection](src/main/kotlin/l11_advanced/lesson07_annotations_reflection/AnnotationsAndReflection.kt)
+- [ ] 11.8 [State machines with sealed types](src/main/kotlin/l11_advanced/lesson08_state_machines/StateMachines.kt)
+- [ ] 11.9 [Calling Kotlin from Java](src/main/kotlin/l11_advanced/lesson09_java_interop/JavaInterop.kt)
+- [ ] 11.10 [Contracts, typealiases and context parameters](src/main/kotlin/l11_advanced/lesson10_contracts_and_more/ContractsAndMore.kt)
+- [ ] Exercises: [AdvancedExercises](src/main/kotlin/l11_advanced/exercises/AdvancedExercises.kt) (10 tests green)
+- [ ] Practice A: [An HTML builder DSL](src/main/kotlin/l11_advanced/practice/html/HtmlDsl.kt)
+- [ ] Practice B: [A type-safe configuration DSL](src/main/kotlin/l11_advanced/practice/config/ConfigDsl.kt)
+- [ ] Practice C: [An order lifecycle as a state machine](src/main/kotlin/l11_advanced/practice/orders/OrderStateMachine.kt)
+
+## Level 12 — Capstones · [README](src/main/kotlin/l12_capstones/README.md)
+
+Build each project yourself in its `starter/` folder, then compare with `reference/`.
+
+- [ ] [Library management CLI](src/main/kotlin/l12_capstones/library/README.md) (`./gradlew exercises --tests "l12_capstones.library*"` green)
+- [ ] [Weather aggregator (Ktor + Flow)](src/main/kotlin/l12_capstones/weather/README.md) (`./gradlew exercises --tests "l12_capstones.weather*"` green)
+- [ ] [Task scheduler (coroutines + channels)](src/main/kotlin/l12_capstones/scheduler/README.md) (`./gradlew exercises --tests "l12_capstones.scheduler*"` green)
+
+---
+
+## Where to go next
+
+You finished the course! See "Where to go from here" in the [capstones README](src/main/kotlin/l12_capstones/README.md).

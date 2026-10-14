@@ -53,10 +53,10 @@ Then open the folder in IntelliJ (**File ▸ Open**, and pick the folder) and wa
 | 06 | [Collections](src/main/kotlin/l06_collections) — List/Set/Map, transformations, sequences | ✅ |
 | 07 | [Functional](src/main/kotlin/l07_functional) — lambdas, higher-order functions, scope functions, inline | ✅ |
 | 08 | [Generics](src/main/kotlin/l08_generics) — variance, constraints, reified | ✅ |
-| 09 | Coroutines — builders, dispatchers, structured concurrency, cancellation, channels | 🔜 |
-| 10 | Flow — operators, StateFlow, SharedFlow, testing | 🔜 |
-| 11 | Advanced — delegation, DSLs, operator overloading, interop | 🔜 |
-| 12 | Capstone projects | 🔜 |
+| 09 | [Coroutines](src/main/kotlin/l09_coroutines) — builders, dispatchers, structured concurrency, cancellation, channels | ✅ |
+| 10 | [Flow](src/main/kotlin/l10_flow) — operators, StateFlow, SharedFlow, testing | ✅ |
+| 11 | [Advanced](src/main/kotlin/l11_advanced) — exceptions, Result, delegation, DSLs, operator overloading, interop | ✅ |
+| 12 | [Capstones](src/main/kotlin/l12_capstones) — library CLI, weather aggregator, task scheduler | ✅ |
 
 ## Repository layout
 
